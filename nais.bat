@@ -65,6 +65,7 @@ echo [36mUpdating pip...[0m
 python -m pip install --upgrade pip
 
 echo [36mInstalling required Python packages...[0m
+pip install wheel
 pip install torch torchvision torchaudio dotmap fastapi uvicorn omegaconf transformers sentence_transformers faiss-cpu einops pytorch_lightning ftfy scikit-image torchdiffeq jsonmerge --extra-index-url https://download.pytorch.org/whl/cu116
 
 echo [36mPreparing aria2...[0m
