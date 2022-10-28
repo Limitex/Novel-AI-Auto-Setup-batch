@@ -79,7 +79,7 @@ powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%PYTHIN_PIP
 %~dp0naifu\python\python.exe %~dp0get-pip.py > nul
 del %~dp0get-pip.py
 powershell -Command "[System.IO.File]::WriteAllLines(('%~dp0replaced'), @((gc '%~dp0naifu\python\python310._pth').Replace('#import site', 'import site')), (New-Object 'System.Text.UTF8Encoding' -ArgumentList @($false)))" > nul
-copy /y %~dp0replaced %~dp0naifu\python\python310._pth
+copy /y %~dp0replaced %~dp0naifu\python\python310._pth > nul
 del /q %~dp0replaced
 
 @rem ## Install Python modules
@@ -92,7 +92,7 @@ powershell Expand-Archive -Path "%~dp0naifu\program.zip" -DestinationPath "%~dp0
 del "%~dp0naifu\program.zip"
 
 powershell -Command "[System.IO.File]::WriteAllLines(('%~dp0replaced'), @((gc '%~dp0naifu\run.bat').Replace('%%~dp0%%VENV_DIR%%\Scripts\Python.exe', 'python\python.exe').Replace('--host 0.0.0.0', '--host 127.0.0.1').Replace('--port=6969', '--port=80')), (New-Object 'System.Text.UTF8Encoding' -ArgumentList @($false)))" > nul
-copy /y %~dp0replaced %~dp0naifu\run.bat
+copy /y %~dp0replaced %~dp0naifu\run.bat > nul
 del /q %~dp0replaced
 
 mkdir %~dp0naifu\others > nul
