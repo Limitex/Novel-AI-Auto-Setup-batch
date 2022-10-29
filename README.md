@@ -9,5 +9,8 @@ During the setup process, Aria2 is downloaded and Torrent downloaded using it, s
 
 Place this batch file in the newly created folder and run it. Also, if there are other files in the same directory, the setup will be interrupted.
 
-The system will check to see if python and pip are available. If they are not, the setup will be interrupted, so please install them as soon as possible.
-Make sure you can run `python --version` and `pip --version` in Powershell, etc.
+If the Microsoft Visual C++ Runtime is not found during the installation process, the installer will start. Please install and run it again.
+If a reboot is required, please reboot and run again.
+
+> Python is now installed in the local Niafu directory, so Python and pip no longer need to be added to the environment variables and run.
+
