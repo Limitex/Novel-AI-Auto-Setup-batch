@@ -1,10 +1,11 @@
 @echo off
 setlocal
 
+set RUNTIME_URI=https://aka.ms/vs/17/release/vc_redist.x64.exe
 set ARIA2_URI=https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0-win-64bit-build1.zip
 set PYTHON_URI=https://www.python.org/ftp/python/3.10.8/python-3.10.8-embed-amd64.zip
 set PYTHIN_PIP_URI=https://bootstrap.pypa.io/get-pip.py
-set RUNTIME_URI=https://aka.ms/vs/17/release/vc_redist.x64.exe
+
 set NAIFU_MAGNET="magnet:?xt=urn:btih:4a4b483d4a5840b6e1fee6b0ca1582c979434e4d&dn=naifu&tr=udp%%3a%%2f%%2ftracker.opentrackr.org%%3a1337%%2fannounce"
 
 echo :
