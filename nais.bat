@@ -47,6 +47,17 @@ if %count% equ 0 (
 echo :
 echo : [32mConfirmation completed.[0m
 
+@rem # warning step
+
+echo :
+echo : Caution.
+echo :
+echo : [33mThis batch file uses Aria2 to download Magnet. Therefore, if the download does not proceed from 0%, we recommend that you review your router settings and configure DMZ, etc.[0m
+echo : [33mDuring the installation of the Python module, a warning message such as "Path not followed" will be output, but this should be ignored as there is no problem with execution.[0m
+echo :
+echo : [33mPress any key to continue.[0m
+pause > nul
+
 @rem # Build step.
 
 echo :
