@@ -4,6 +4,7 @@ setlocal
 set ARIA2_URI=https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0-win-64bit-build1.zip
 set PYTHON_URI=https://www.python.org/ftp/python/3.10.8/python-3.10.8-embed-amd64.zip
 set PYTHIN_PIP_URI=https://bootstrap.pypa.io/get-pip.py
+set RUNTIME_URI=https://aka.ms/vs/17/release/vc_redist.x64.exe
 set NAIFU_MAGNET="magnet:?xt=urn:btih:4a4b483d4a5840b6e1fee6b0ca1582c979434e4d&dn=naifu&tr=udp%%3a%%2f%%2ftracker.opentrackr.org%%3a1337%%2fannounce"
 
 echo :
@@ -35,11 +36,13 @@ for /f "usebackq delims=" %%A in (`powershell -Command "Get-ChildItem -Path( 'HK
 )
 if %count% equ 0 (
     echo : [33mCould not find Microsoft Visual C++ X64 Runtime.[0m
-    echo : [33mSoftware may not run properly.[0m
-    echo : [34mhttps://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170[0m
-    echo : [33mPress any key to continue.[0m
-    echo : [33mPress Ctrl + c to exit.[0m
-    pause > nul
+    echo : Let the installer run and complete.
+    echo : If a reboot is required, reboot and run this batch file again.
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%RUNTIME_URI%','%~dp0vc_redist.x64.exe')"
+    vc_redist.x64.exe
+    del "%~dp0vc_redist.x64.exe"
+    echo : Run it again.
+    goto :EXIT
 ) else (
     echo : Microsoft Visual C++ Runtime confirmed.
 )
@@ -55,7 +58,7 @@ echo :
 echo : [33mThis batch file uses Aria2 to download Magnet. Therefore, if the download does not proceed from 0%, we recommend that you review your router settings and configure DMZ, etc.[0m
 echo : [33mDuring the installation of the Python module, a warning message such as "Path not followed" will be output, but this should be ignored as there is no problem with execution.[0m
 echo :
-echo : [33mPress any key to continue.[0m
+echo : Press any key to continue.
 pause > nul
 
 @rem # Build step.
