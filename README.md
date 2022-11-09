@@ -38,6 +38,8 @@ pip --version
 ```
 python -m pip install --upgrade pip
 
+pip install wheel
+
 pip install torch torchvision torchaudio dotmap fastapi uvicorn omegaconf transformers sentence_transformers faiss-cpu einops pytorch_lightning ftfy scikit-image torchdiffeq jsonmerge --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
