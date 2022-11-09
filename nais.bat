@@ -100,7 +100,7 @@ del /q %~dp0replaced
 
 @rem ## Install Python modules
 echo : Installs the modules required to run Naifu.
-%~dp0naifu\python\Scripts\pip.exe install torch torchvision torchaudio dotmap fastapi uvicorn omegaconf transformers sentence_transformers faiss-cpu einops pytorch_lightning ftfy scikit-image torchdiffeq jsonmerge --extra-index-url https://download.pytorch.org/whl/cu116
+%~dp0naifu\python\Scripts\pip.exe install torch torchvision torchaudio dotmap fastapi uvicorn omegaconf transformers sentence_transformers faiss-cpu einops pytorch_lightning==1.7.7 ftfy scikit-image torchdiffeq jsonmerge --extra-index-url https://download.pytorch.org/whl/cu116
 
 @rem ## Compose the naifu
 echo : Setting up Naifu.
