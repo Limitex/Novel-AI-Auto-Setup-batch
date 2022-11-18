@@ -5,6 +5,12 @@ Use of this batch file is at your own risk.
 This is a batch file that downloads the leaked NovelAI (NAIFU) and automatically sets it up ready for use.
 During the setup process, Aria2 is downloaded and Torrent downloaded using it, so the setup may not be completed.
 
+## 8GB or less VRAM
+
+For VRAM of 8 GB or less, edit the batch file by overwriting the following repository
+
+https://github.com/Limitex/NAIFU
+
 ## How to use
 
 Naifu must be run on a PC with at least 8 GB of GPU memory.
